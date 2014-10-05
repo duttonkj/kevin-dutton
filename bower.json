@@ -1,0 +1,12 @@
+{
+  "name": "kevin-dutton",
+  "private": true,
+  "dependencies": {
+    "modernizr": "~2.6.2",
+    "league-spartan": "https://github.com/theleagueof/league-spartan.git",
+    "raleway": "https://github.com/theleagueof/raleway.git",
+    "sass-mq": "~2.1.1",
+    "normalize.css": "~3.0.1"
+  },
+  "devDependencies": {}
+}

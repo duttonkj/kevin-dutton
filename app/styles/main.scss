@@ -1,0 +1,34 @@
+
+
+//SassMQ : Breakpoint manager
+
+// MQ settings
+/* \$mq-breakpoints: (
+    mobile:  320px,
+    tablet:  760px,
+    desktop: 1020px,
+    wide:    1200px
+);
+
+// Define the breakpoint from the \$mq-breakpoints list that should
+// be used as the target width when outputting a static stylesheet
+// (i.e. when \$mq-responsive is set to 'false').
+\$mq-static-breakpoint: desktop;
+
+// If you want to display the currently active breakpoint in the top
+// right corner of your site during development, add the breakpoints
+// to this list, ordered by width, e.g. (mobile, tablet, desktop).
+\$mq-show-breakpoints: (mobile, tablet, desktop, wide);
+ */
+//@import '../bower_components/sass-mq/mq';
+
+// Global
+@import './styles/variables';
+//@import './styles/fonts';
+@import './styles/helpers';
+@import './styles/animations';
+@import './styles/shared';
+
+// Sections
+@import './styles/header';
+@import './styles/view';
