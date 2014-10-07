@@ -16,6 +16,8 @@ var Router = require('react-router');
 var Routes = Router.Routes;
 var Route = Router.Route;
 var Link = Router.Link;
+var ActiveState = Router.ActiveState;
+
 
 // Pages
 var Intro = require('./Intro.jsx');
@@ -28,10 +30,29 @@ var Header = require('./_components/Header.jsx');
 
 
 var Main = React.createClass({
+
+	mixins: [ ActiveState ],
+
+	getInitialState: function () {
+    	return {
+			isIntroActive: false,
+			isRouteActive: false
+		};
+	},
+
+	updateActiveState: function () {
+		this.setState({
+			isIntroActive: this.isActive('intro'),
+			isRouteActive: this.isActive('work') || this.isActive('about') || this.isActive('contact')
+		})
+	},
+
 	render: function() {
+
+		console.log(this.state);
 		return (
 			<div className="app">
-				<Header />
+				<Header isIntroActive={this.state.isIntroActive} isRouteActive={this.state.isRouteActive} />
 				<div className="viewport">
 					<CSSTransitionGroup transitionName="example" component={React.DOM.div}>
 			          <this.props.activeRouteHandler />
@@ -40,6 +61,7 @@ var Main = React.createClass({
 			</div>
 		);
 	}
+
 });
 
 

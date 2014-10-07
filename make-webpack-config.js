@@ -3,6 +3,8 @@ var webpack = require("webpack");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var loadersByExtension = require("./config/loadersByExtension");
 var joinEntry = require("./config/joinEntry");
+var autoprefixer = require('autoprefixer-core');
+
 
 module.exports = function(options) {
 	var entry = {
@@ -23,10 +25,10 @@ module.exports = function(options) {
 		"md|markdown": ["html-loader", "markdown-loader"],
 	};
 	var stylesheetLoaders = {
-		"css": "css-loader!autoprefixer-loader",
+		"css": "css-loader!postcss-loader",
 		"less": "css-loader!less-loader",
 		"styl": "css-loader!stylus-loader",
-		"scss": "css!sass?outputStyle=expanded",
+		"scss": "css!sass?outputStyle=expanded&sourceMap=true!!postcss-loader",
 	}
 	var additionalLoaders = [
 		// { test: /some-reg-exp$/, loader: "any-loader" }
@@ -120,6 +122,7 @@ module.exports = function(options) {
 		module: {
 			loaders: loadersByExtension(loaders).concat(loadersByExtension(stylesheetLoaders))
 		},
+		postcss:[autoprefixer],
 		devtool: options.devtool,
 		debug: options.debug,
 		resolveLoader: {

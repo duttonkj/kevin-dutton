@@ -1,7 +1,7 @@
 {
   "name": "react-starter",
   "version": "0.0.0",
-  "description": "",
+  "description": "https://github.com/webpack/react-starter",
   "main": "app/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -20,6 +20,7 @@
   "author": "Tobias Koppers @sokra",
   "license": "MIT",
   "dependencies": {
+    "autoprefixer-core": "^3.1.1",
     "css-loader": "^0.7.0",
     "express": "^4.7.2",
     "extract-text-webpack-plugin": "^0.2.3",
@@ -28,6 +29,7 @@
     "less": "^1.7.4",
     "less-loader": "^0.7.5",
     "null-loader": "^0.1.0",
+    "postcss-loader": "^0.1.0",
     "react": "^0.11.1",
     "react-hot-loader": "^0.2.0",
     "react-image-component": "^0.2.1",
@@ -41,6 +43,5 @@
     "webpack-dev-server": "^1.4.7"
   },
   "devDependencies": {
-    "autoprefixer-loader": "^1.0.0"
   }
 }

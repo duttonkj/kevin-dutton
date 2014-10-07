@@ -79,6 +79,9 @@ header{
 		nav{
 
 			transform: scale3d(0.2,0.2,1);
+			bottom: 25px;
+
+			//z-index:-1;
 
 			@extend .animation-jelly-out;
 
