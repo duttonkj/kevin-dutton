@@ -9,7 +9,6 @@ var autoprefixer = require('autoprefixer-core');
 module.exports = function(options) {
 	var entry = {
 		main: reactEntry("Main")
-		//second: reactEntry("Second")
 	};
 	var loaders = {
 		"coffee": "coffee-redux-loader",
@@ -28,8 +27,10 @@ module.exports = function(options) {
 		"css": "css-loader!postcss-loader",
 		"less": "css-loader!less-loader",
 		"styl": "css-loader!stylus-loader",
-		"scss": "css!sass?outputStyle=expanded&sourceMap=true!!postcss-loader",
+		"scss": "style!css!postcss-loader!sass?outputStyle=expanded",
 	}
+
+
 	var additionalLoaders = [
 		// { test: /some-reg-exp$/, loader: "any-loader" }
 	];
