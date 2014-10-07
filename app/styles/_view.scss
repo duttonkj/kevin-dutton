@@ -1,21 +1,75 @@
+$viewPadding: 15px;
+
 .view{
-	padding: 30px;
+
+	padding: $viewPadding $viewPadding 50px $viewPadding;
 
 	h1{
 		margin-top:0;
+		margin-bottom:0;
 		font-size: 38px;
+		padding-top:30px;
 	}
+
+
+
 }
 
+section{
+
+	margin:0;
+	padding: 16px 0 40px 0;
+
+	border-top:1px solid $colorGreenLight;
+
+	//text-align:center;
+
+	h2{
+		margin:30px 0 0 0;
+		font-size:16px;
+	}
+
+	p{
+		font-size: 16px;
+		margin: 0 0 0 0;
+	}
+
+	&.footnote{
+		h2{
+			font-size: 0.5em;
+		}
+		p{
+			font-size:0.5em;
+		}
+	}
+
+}
+
+
 .example-enter {
-opacity: 0.01;
-transition: opacity .5s ease-in;
+	opacity: 0.01;
+	transition: opacity .5s ease-in;
 }
 
 .example-enter.example-enter-active {
-opacity: 1;
+	opacity: 1;
 }
 
 .example-leave.example-leave-active {
-opacity: 0.01;
+	opacity: 0.01;
+}
+
+//Bio
+.bio{
+	background-color: $colorBrownDark;
+/* 	margin-left: -\$viewPadding;
+margin-right: -\$viewPadding; */
+	margin-top:15px;
+
+
+
+	p{
+		color: #fff;
+		padding: 30px;
+	}
 }
