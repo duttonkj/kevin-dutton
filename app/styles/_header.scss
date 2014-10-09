@@ -228,6 +228,8 @@ nav{
 				text-decoration:none;
 				text-transform:uppercase;
 
+				margin-right:2px;
+
 				&.active{
 
 						background-color: $colorGreenDark;
@@ -260,6 +262,7 @@ nav{
 
 	width: 657%;
 
+	opacity: 0.4;
 
 	transform: scale3d(0.3,0.3,1);
 

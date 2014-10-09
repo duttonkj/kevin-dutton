@@ -2,24 +2,39 @@
 
 var React = require("react");
 
-var Actions = require("./_reflux/Actions.js");
 
 var Image = require('react-image-component');
 var ImageSrc = require('./images/kevin-dutton.jpg');
 
+var AnimationHelper = require('./_components/AnimationHelper.js');
+
 var About = React.createClass({
 
-	componentDidMount: function(){
+	mixins: [AnimationHelper], // Use the mixin
 
-		console.log('About: trigger viewMounted');
-		Actions.viewMounted();
-
+	getInitialState: function() {
+		return {
+			willEnter: false,
+			didEnter: false,
+			willLeave: false,
+			didLeave: false
+		};
 	},
 
 	render: function() {
 
+		var cx = React.addons.classSet;
+		var animateClasses = cx({
+			'about' : true,
+			'view' : true,
+			'view-enter': this.state.willEnter,
+			'view-enter-active': this.state.didEnter,
+			'view-leave': this.state.willLeave,
+			'view-leave-active': this.state.didLeave
+		});
+
 		return (
-		<div className="about view">
+		<div className={animateClasses}>
 			<h1>About</h1>
 
 			<div className="bio">

@@ -5,7 +5,7 @@ var Actions = require("./_reflux/Actions.js");
 
 var Work = React.createClass({
 
-	componentDidMount: function(){
+	componentDidEnter: function(){
 
 		console.log('Work: trigger viewMounted');
 		Actions.viewMounted();

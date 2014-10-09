@@ -12,6 +12,11 @@ $viewPadding: 15px;
 	}
 
 
+	position:absolute;
+	top:0;
+	left:0;
+
+	transform: scale3d(0.3,0.3,1);
 
 }
 
@@ -46,18 +51,34 @@ section{
 }
 
 
-.example-enter {
-	opacity: 0.01;
-	transition: opacity .5s ease-in;
+.view-enter {
+	transform: scale3d(0.3,0.3,1);
 }
 
-.example-enter.example-enter-active {
-	opacity: 1;
+.view-enter.view-enter-active {
+	//transition: all 800ms ease;
+	transition-delay:0ms;
+	transform: scale3d(1.0,1.0,1);
+	animation-delay:0ms;
+	@extend .animation-jelly-in;
 }
 
-.example-leave.example-leave-active {
-	opacity: 0.01;
+
+.view-leave {
+ 	//transform: translateX(0);
+ 	//transition: transform 200ms ease-out;
+	transform: translateY(0) scale3d(0.3,0.3,1);
+	@extend .animation-jelly-out;
 }
+
+.view-leave.view-leave-active {
+ 	//transform: translateX(-100%) rotate(30deg);
+	/* transform: translateY(0) scale3d(0.3,0.3,1);
+	animation-delay:0ms;
+	@extend .animation-jelly-out; */
+}
+
+
 
 //Bio
 .bio{

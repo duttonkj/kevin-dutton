@@ -3,7 +3,7 @@
 //Reflux.nextTick(process.nextTick);
 
 var React = require("react/addons");
-var CSSTransitionGroup = require('react/lib/ReactCSSTransitionGroup');
+var CSSTransitionGroup = require('react/lib/ReactTransitionGroup');
 
 
 // Basic styling
@@ -55,7 +55,7 @@ var Main = React.createClass({
 			<div className="app">
 				<Header isIntroActive={this.state.isIntroActive} isRouteActive={this.state.isRouteActive} />
 				<div className="viewport">
-					<CSSTransitionGroup transitionName="example" component={React.DOM.div}>
+					<CSSTransitionGroup transitionName="view" component={React.DOM.div}>
 			          <this.props.activeRouteHandler />
 			        </CSSTransitionGroup>
 				</div>
@@ -69,10 +69,10 @@ var Main = React.createClass({
 var Application = (
 	<Routes location="history">
 		<Route handler={Main}>
-			<Route name="intro" path="/" handler={Intro} />
-			<Route name="about" path="about" handler={About}/>
-			<Route name="work" path="work" handler={Work}/>
-			<Route name="contact" path="contact" handler={Contact}/>
+			<Route name="intro" path="/" handler={Intro} addHandlerKey={true} />
+			<Route name="about" path="about" handler={About} addHandlerKey={true} />
+			<Route name="work" path="work" handler={Work} addHandlerKey={true} />
+			<Route name="contact" path="contact" handler={Contact} addHandlerKey={true} />
 		</Route>
 	</Routes>
 );
