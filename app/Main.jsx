@@ -1,6 +1,5 @@
 /** @jsx React.DOM */
 
-//var Reflux = require("reflux");
 //Reflux.nextTick(process.nextTick);
 
 var React = require("react/addons");
@@ -27,6 +26,8 @@ var Contact = require('./Contact.jsx');
 
 // Components
 var Header = require('./_components/Header.jsx');
+
+
 
 
 var Main = React.createClass({

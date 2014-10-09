@@ -2,10 +2,20 @@
 
 var React = require("react");
 
+var Actions = require("./_reflux/Actions.js");
+
 var Image = require('react-image-component');
 var ImageSrc = require('./images/kevin-dutton.jpg');
 
 var About = React.createClass({
+
+	componentDidMount: function(){
+
+		console.log('About: trigger viewMounted');
+		Actions.viewMounted();
+
+	},
+
 	render: function() {
 
 		return (

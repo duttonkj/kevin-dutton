@@ -1,8 +1,15 @@
 /** @jsx React.DOM */
 
 var React = require("react");
+var Actions = require("./_reflux/Actions.js");
 
 var Contact = React.createClass({
+	componentDidMount: function(){
+
+		console.log('Contact: trigger viewMounted');
+		Actions.viewMounted();
+
+	},
 	render: function() {
 		var age = this.props.query.showAge ? '33' : '';
 		return (

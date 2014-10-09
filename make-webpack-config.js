@@ -27,7 +27,7 @@ module.exports = function(options) {
 		"css": "css-loader!postcss-loader",
 		"less": "css-loader!less-loader",
 		"styl": "css-loader!stylus-loader",
-		"scss": "style!css!postcss-loader!sass?outputStyle=expanded",
+		"scss": "style!css!postcss-loader!sass?outputStyle=expanded&includePaths[]=./",
 	}
 
 
