@@ -2,43 +2,25 @@
 
 var React = require("react");
 
+var View = require("./_components/View.jsx");
 
-var Image = require('react-image-component');
+var AnimationHelper = require("./_components/AnimationHelper.js");
+
+//var Image = require('react-image-component');
 var ImageSrc = require('./images/kevin-dutton.jpg');
 
-var AnimationHelper = require('./_components/AnimationHelper.js');
 
 var About = React.createClass({
 
-	mixins: [AnimationHelper], // Use the mixin
-
-	getInitialState: function() {
-		return {
-			willEnter: false,
-			didEnter: false,
-			willLeave: false,
-			didLeave: false
-		};
-	},
+	mixins: [AnimationHelper],
 
 	render: function() {
 
-		var cx = React.addons.classSet;
-		var animateClasses = cx({
-			'about' : true,
-			'view' : true,
-			'view-enter': this.state.willEnter,
-			'view-enter-active': this.state.didEnter,
-			'view-leave': this.state.willLeave,
-			'view-leave-active': this.state.didLeave
-		});
-
 		return (
-		<div className={animateClasses}>
+		<View classRoute={this.props.classId}  willEnter={this.state.willEnter} didEnter={this.state.didEnter}>
 			<h1>About</h1>
 
 			<div className="bio">
-				<img src={ImageSrc} />
 
 				<p>Kevin is a full stack developer with 14 years professional experience.   He has built solutions for fortune 50 companies, health care professionals, patients, and consumers.  He began programming for the web and has recently focused on responsive design and developing for the iOS platform. Kevin appreciates great design and enjoys tackling complex interfaces and problems.</p>
 			</div>
@@ -71,8 +53,7 @@ var About = React.createClass({
                 <p>View the <a href="https://github.com/duttonkj/portfolio" target="_blank">source</a> for this site on GitHub</p>
 
             </section>
-
-		</div>
+		</View>
 		);
 	}
 });

@@ -2,7 +2,7 @@
 // Jelly : bounce item
 
 .animation-jelly-in {
-  animation: JellyIn 1500ms linear alternate none;
+  animation: JellyIn 1500ms linear alternate forwards;
 }
 
 /* Generated with Bounce.js. Edit at http://goo.gl/GbMGz3 */
@@ -45,7 +45,7 @@
 
 
 .animation-jelly-out {
-  animation: jellyOut 1000ms linear alternate none;
+  animation: jellyOut 1000ms linear alternate forwards;
 }
 
 /* Generated with Bounce.js. Edit at http://goo.gl/V53b4G */
@@ -87,7 +87,7 @@
 
 
 .animation-jelly-out-mountains {
-  animation: jellyOutMountains 600ms linear alternate backwards;
+  animation: jellyOutMountains 600ms linear alternate forwards;
 }
 
 /* Generated with Bounce.js. Edit at http://goo.gl/pAhxaW */
@@ -166,4 +166,20 @@
   93.333333% { transform: matrix3d(0.59987, 0, 0, 0, 0, 0.59987, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
   96.666667% { transform: matrix3d(0.59973, 0, 0, 0, 0, 0.59973, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
   100% { transform: matrix3d(0.6, 0, 0, 0, 0, 0.6, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+}
+
+
+@keyframes swing {
+	20% { transform: rotate(15deg); }
+	40% { transform: rotate(-10deg); }
+	60% { transform: rotate(5deg); }
+	80% { transform: rotate(-5deg); }
+	100% { transform: rotate(0deg); }
+}
+
+.swing {
+
+	transform-origin: top center;
+	animation: swing 3000ms ease alternate forwards;
+
 }

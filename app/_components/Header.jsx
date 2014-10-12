@@ -14,7 +14,7 @@ var Header = React.createClass({
 
 	onViewMounted: function(status) {
 		console.log('Header:viewMounted recieved');
-		this.toggleMenuState()
+	//	this.toggleMenuState()
 
     },
 
@@ -27,6 +27,7 @@ var Header = React.createClass({
 	handleClick: function(e){
 
 		console.log('header tapped: %s', this.state.showMenu);
+
 
 		this.toggleMenuState();
 
@@ -44,28 +45,28 @@ var Header = React.createClass({
 		}else{
 			console.log('nav tapped: stopProp');
 			e.stopPropagation();
-			// this.setState({
-			// 	showMenu: false
-			// });
+			this.setState({
+				showMenu: true
+			});
 		}
 
 	},
 
 	toggleMenuState: function(){
 
-			// if(!this.state.showMenu && !this.props.isIntroActive){
-			// 	console.log('header tapped: show menu');
-			// 	this.setState({
-			// 		showMenu: true
-			// 	});
-			//
-			// }else{
-			// 	console.log('header tapped: hide menu');
-			// 	this.setState({
-			// 		showMenu: false
-			// 	});
-			//
-			// }
+			if(!this.state.showMenu && !this.props.isIntroActive){
+				console.log('header tapped: show menu');
+				this.setState({
+					showMenu: true
+				});
+
+			}else{
+				console.log('header tapped: hide menu');
+				this.setState({
+					showMenu: false
+				});
+
+			}
 
 	},
 
@@ -74,8 +75,8 @@ var Header = React.createClass({
 		var cx = React.addons.classSet;
 		var classes = cx({
 			'intro': true,
-			'collapse': false,
-			'menu' : this.state.showMenu
+			'collapse': this.state.showMenu,
+			'menu' : false
 		});
 
 		return (

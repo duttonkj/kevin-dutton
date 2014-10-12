@@ -69,10 +69,10 @@ var Main = React.createClass({
 var Application = (
 	<Routes location="history">
 		<Route handler={Main}>
-			<Route name="intro" path="/" handler={Intro} addHandlerKey={true} />
-			<Route name="about" path="about" handler={About} addHandlerKey={true} />
-			<Route name="work" path="work" handler={Work} addHandlerKey={true} />
-			<Route name="contact" path="contact" handler={Contact} addHandlerKey={true} />
+			<Route name="intro" path="/" handler={Intro} addHandlerKey={true} classId="intro" />
+			<Route name="about" path="about" handler={About} addHandlerKey={true} classId="about" />
+			<Route name="work" path="work" handler={Work} addHandlerKey={true} classId="work" />
+			<Route name="contact" path="contact" handler={Contact} addHandlerKey={true} classId="contact" />
 		</Route>
 	</Routes>
 );

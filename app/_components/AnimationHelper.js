@@ -28,27 +28,39 @@
 var Actions = require("../_reflux/Actions.js");
 
 var AnimationHelper = {
+
+	getInitialState: function() {
+		return {
+			willEnter: false,
+			didEnter: false,
+			willLeave: false,
+			didLeave: false
+		};
+	},
+
 	componentWillEnter: function( done ) {
 		console.log('view will enter');
 
 		var _this = this;
-		requestAnimationFrame(function() {
+		//requestAnimationFrame(function() {
 
 			_this.setState({
 				willEnter: true
 			});
 
-	        requestAnimationFrame(function() {
+	        //requestAnimationFrame(function() {
 
 				_this.setState({
 					didEnter: true
 				});
 
-				done();
+				setTimeout(function(){
+					done();
+				},800)
 
-	        }.bind(this));
+	        //}.bind(this));
 
-	     }.bind(this));
+	     //}.bind(this));
 
 
 		//done();
@@ -57,7 +69,9 @@ var AnimationHelper = {
 
 		console.log('view did enter');
 
+
 		Actions.viewMounted();
+		console.log('view Mounted triggered');
 
 	},
 	componentWillLeave: function( done ) {
@@ -83,12 +97,18 @@ var AnimationHelper = {
 
 			}.bind(this));
 
+
 		}.bind(this));
 
 
 	},
 	componentDidLeave: function() {
 		console.log('view did leave');
+
+		// this.setState({
+		// 	willLeave: false
+		// });
+
 	}
 }
 

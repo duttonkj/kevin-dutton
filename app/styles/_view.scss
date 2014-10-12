@@ -17,6 +17,7 @@ $viewPadding: 15px;
 	left:0;
 
 	transform: scale3d(0.3,0.3,1);
+	transform-origin: 50% 100%;
 
 }
 
@@ -52,13 +53,12 @@ section{
 
 
 .view-enter {
-	transform: scale3d(0.3,0.3,1);
 }
 
 .view-enter.view-enter-active {
 	//transition: all 800ms ease;
 	transition-delay:0ms;
-	transform: scale3d(1.0,1.0,1);
+//	transform: scale3d(1.0,1.0,1);
 	animation-delay:0ms;
 	@extend .animation-jelly-in;
 }
@@ -92,5 +92,21 @@ margin-right: -\$viewPadding; */
 	p{
 		color: #fff;
 		padding: 30px;
+	}
+}
+
+// Lock{
+.lock{
+	color:#8E7E24;
+	fill: currentColor;
+	display:block;
+	margin: 10px auto;
+	width: 35%;
+	@extend .swing;
+}
+
+.work{
+	.btn{
+		margin-top: 15px;
 	}
 }
