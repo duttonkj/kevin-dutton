@@ -17,7 +17,10 @@ $viewPadding: 15px;
 	left:0;
 
 	transform: scale3d(0.3,0.3,1);
-	transform-origin: 50% 100%;
+	transform-origin: 50% 300%;
+	animation-duration: 1000ms;
+
+	border:2px solid red;
 
 }
 
@@ -59,7 +62,7 @@ section{
 	//transition: all 800ms ease;
 	transition-delay:0ms;
 //	transform: scale3d(1.0,1.0,1);
-	animation-delay:0ms;
+	animation-delay:400ms;
 	@extend .animation-jelly-in;
 }
 
@@ -68,6 +71,7 @@ section{
  	//transform: translateX(0);
  	//transition: transform 200ms ease-out;
 	transform: translateY(0) scale3d(0.3,0.3,1);
+
 	@extend .animation-jelly-out;
 }
 
@@ -97,15 +101,23 @@ margin-right: -\$viewPadding; */
 
 // Lock{
 .lock{
-	color:#8E7E24;
-	fill: currentColor;
+	path{
+		fill:#8E7E24;
+	}
 	display:block;
 	margin: 10px auto;
 	width: 35%;
 	@extend .swing;
 }
 
+.contact{
+	top:auto;
+	bottom:60px;
+}
+
 .work{
+
+
 	.btn{
 		margin-top: 15px;
 	}

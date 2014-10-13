@@ -49,8 +49,8 @@ transition-delay: 200ms; */
 
 		.mountains{
 
-			bottom: 0;
-		//	transform: scale3d(1.0,1.0,1);
+			//bottom: 200px;
+			//transform: scale3d(1.0,1.0,1);
 			//transition-delay: 500ms;
 			//animation-delay: 500ms;
 			@extend .animation-jelly-in;
@@ -74,7 +74,7 @@ transition-delay: 200ms; */
 
 		.logo{
 
-			transform: translate3d(0, -125px,0) scale3d(0.6,0.6,1);
+			transform: translate3d(0,-107px,0) scale3d(0.6,0.6,1);
 
 		}
 
@@ -96,8 +96,12 @@ transition-delay: 200ms; */
 
 		.mountains{
 
-			//transform: scale3d(0.09,0.09,1);
-			@extend .animation-jelly-out-mountains;
+			//transform: scale(0.2);
+			opacity:0.6;
+			//left: -202%;
+			//bottom: 0;
+			//@extend .animation-jelly-out-mountains;
+			@extend .animation-jelly-out;
 
 		}
 
@@ -105,7 +109,7 @@ transition-delay: 200ms; */
 		&.menu{
 
 			.logo{
-			/* 	bottom: -100%; */
+				transform: translate3d(0, 0,0) scale3d(0.6,0.6,1);
 			}
 
 			nav{
@@ -121,8 +125,8 @@ transition-delay: 200ms; */
 
 			.mountains{
 
-				transform: scale3d(0.6,0.6,1);
-				@extend .animation-jelly-mountains-menu;
+				opacity:0.9;
+			//	@extend .animation-jelly-mountains-menu;
 
 			}
 
@@ -175,6 +179,7 @@ transition-delay: 200ms; */
 
 	transition: transform 400ms ease;
 	transform-origin: 0 -200%;
+	z-index:501;
 
 
 	transform: translateZ(0) rotate3d(70deg, 0, 0);
@@ -208,9 +213,13 @@ nav{
 		li{
 
 			display:inline-block;
-			width: 32%;
+			width: 33.3333%;
 			margin: 0;
-			padding:0;
+			padding:0 2px 0 0;
+
+			&:last-of-type{
+				padding-right: 0;
+			}
 
 
 			a{
@@ -221,7 +230,7 @@ nav{
 
 				padding: 16px 0 12px;
 
-				background-color: rgba(220,220,220,0.3);
+				background-color: rgba(220,220,220,0.5);
 
 				font-family: $fontSpartan;
 				font-size: 12px;
@@ -232,7 +241,7 @@ nav{
 				text-decoration:none;
 				text-transform:uppercase;
 
-				margin-right:2px;
+				margin-right:8px;
 
 				&.active{
 
@@ -256,22 +265,16 @@ nav{
 .mountains{
 
 	position:absolute;
-	bottom: -400%;
-	left:-284%;
+	bottom: 0;
+	left:-286%;
+	z-index: 500;
 
-	z-index: -1;
-
-	//filter: sepia(1) opacity(0.4);
 	filter: sepia(1);
 
-	width: 657%;
+	width: 500%;
 
 	opacity: 0.4;
 
-	transform: translateZ(0) scale3d(0.3,0.3,1);
-
-	transition: all 400ms ease;
-	transform-origin: 50% 100%;
-	transition-delay: 0ms;
+	transform-origin:76% 100%;
 
 }

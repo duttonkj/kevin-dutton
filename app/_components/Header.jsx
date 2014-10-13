@@ -20,6 +20,7 @@ var Header = React.createClass({
 
 	getInitialState: function() {
 		return {
+			collapse: false,
 			showMenu: false
 		};
 	},
@@ -34,6 +35,12 @@ var Header = React.createClass({
 
 	},
 
+	handleLogoClick: function(e){
+		this.setState({
+			collapse:false
+		});
+	},
+
 	handleNavClick: function(e){
 
 		console.log('nav tapped');
@@ -46,7 +53,8 @@ var Header = React.createClass({
 			console.log('nav tapped: stopProp');
 			e.stopPropagation();
 			this.setState({
-				showMenu: true
+				collapse: true,
+				showMenu: false
 			});
 		}
 
@@ -57,10 +65,11 @@ var Header = React.createClass({
 			if(!this.state.showMenu && !this.props.isIntroActive){
 				console.log('header tapped: show menu');
 				this.setState({
-					showMenu: true
+					showMenu:true
 				});
 
 			}else{
+
 				console.log('header tapped: hide menu');
 				this.setState({
 					showMenu: false
@@ -74,15 +83,15 @@ var Header = React.createClass({
 
 		var cx = React.addons.classSet;
 		var classes = cx({
-			'intro': true,
-			'collapse': this.state.showMenu,
-			'menu' : false
+			'intro': this.props.isIntroActive,
+			'collapse': this.state.collapse,
+			'menu' : this.state.showMenu
 		});
 
 		return (
 			<header className={classes} onClick={this.handleClick}>
 
-				<Link to="intro" className="logo">Home</Link>
+				<Link to="intro" className="logo" onClick={this.handleLogoClick}>Home</Link>
 
 				<div className="info">
 					<h1>Kevin Dutton</h1>

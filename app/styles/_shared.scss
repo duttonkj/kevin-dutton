@@ -28,6 +28,8 @@ body{
 	right:0;
 	bottom:0;
 
+	z-index:400;
+
 	overflow-x: hidden;
 	overflow-y: scroll; /* has to be scroll, not auto */
 	-webkit-overflow-scrolling: touch;

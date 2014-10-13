@@ -6,8 +6,11 @@ var View = require("./_components/View.jsx");
 
 var AnimationHelper = require("./_components/AnimationHelper.js");
 
-//var Image = require('react-image-component');
+var ImageLoader = require('./_components/Image.jsx');
+
+console.log('hers the image loader');
 var ImageSrc = require('./images/kevin-dutton.jpg');
+console.log(ImageLoader);
 
 
 var About = React.createClass({
@@ -21,8 +24,8 @@ var About = React.createClass({
 			<h1>About</h1>
 
 			<div className="bio">
-
 				<p>Kevin is a full stack developer with 14 years professional experience.   He has built solutions for fortune 50 companies, health care professionals, patients, and consumers.  He began programming for the web and has recently focused on responsive design and developing for the iOS platform. Kevin appreciates great design and enjoys tackling complex interfaces and problems.</p>
+				<ImageLoader src={ImageSrc} aspectRatio={0.8} />
 			</div>
 			<section>
 
