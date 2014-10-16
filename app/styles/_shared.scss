@@ -35,6 +35,8 @@ body{
 	-webkit-overflow-scrolling: touch;
 
 	background: linear-gradient(to top, #649173, #DBD5A4);
+
+	perspective: 20em;
 }
 
 
@@ -45,9 +47,25 @@ h1{
 	color: $colorGreenDark;
 	font-family: $fontSpartan;
 	font-size: 50px;
-	line-height:1.1;
+	line-height:1.0;
 
 	text-transform: uppercase;
+
+	@include respond-min($sm) {
+
+		font-size: 65px;
+	}
+
+		@include respond-min($md) {
+
+			font-size: 80px;
+		}
+
+			@include respond-min($lg) {
+
+				font-size: 90px;
+			}
+
 
 }
 
@@ -55,7 +73,7 @@ h2{
 
 	color: $colorGreenMedium;
 	font-family: $fontSpartan;
-	font-size: 30px;
+	font-size: 40px;
 	line-height:1.1;
 	text-transform: uppercase;
 }

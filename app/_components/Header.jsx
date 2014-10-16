@@ -95,7 +95,7 @@ var Header = React.createClass({
 
 				<div className="info">
 					<h1>Kevin Dutton</h1>
-					<p>Building websites, apps, and teams</p>
+					<p>Builder of websites, app, and teams</p>
 				</div>
 
 				<nav>

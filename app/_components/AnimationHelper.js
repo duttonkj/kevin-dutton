@@ -50,6 +50,7 @@ var AnimationHelper = {
 
 	        //requestAnimationFrame(function() {
 
+				
 				_this.setState({
 					didEnter: true
 				});

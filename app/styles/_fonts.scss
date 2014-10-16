@@ -7,7 +7,6 @@ $RalewayDev: '../bower_components/raleway/webfonts/raleway_thin-webfont';
 @font-face {
   font-family: 'LeagueSpartan';
   font-style: normal;
-  font-weight: 400;
   src: url( $leagueSpartanDev+'.woff' ) format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
        url( $leagueSpartanDev+'.ttf' ) format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
 }
@@ -16,7 +15,7 @@ $RalewayDev: '../bower_components/raleway/webfonts/raleway_thin-webfont';
 @font-face {
   font-family: 'Raleway';
   font-style: normal;
-  font-weight: 400;
+ // font-weight: 400;
   src: url( $RalewayDev+'.woff' ) format('woff'), /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
        url( $RalewayDev+'.ttf' ) format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
 }
