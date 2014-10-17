@@ -24,8 +24,8 @@ var About = React.createClass({
 			<h1>About</h1>
 
 			<div className="bio">
+				<ImageLoader src={ImageSrc} aspectRatio={2.0} />
 				<p>Kevin is a full stack developer with 14 years professional experience.   He has built solutions for fortune 50 companies, health care professionals, patients, and consumers.  He began programming for the web and has recently focused on responsive design and developing for the iOS platform. Kevin appreciates great design and enjoys tackling complex interfaces and problems.</p>
-				<ImageLoader src={ImageSrc} aspectRatio={0.8} />
 			</div>
 			<section>
 
@@ -46,14 +46,15 @@ var About = React.createClass({
                 <p><a href="http://www.inventivhealth.com" target="_blank">inVentiv Health</a>, <a href="http://www.gsw-w.com" target="_blank">GSW</a>, <a href="http://614mediagroup.com/" target="_blank">614 MediaGroup</a>, <a href="http://www.vsiweb.com/" target="_blank">Vertex Software</a></p>
 
                 <h2><strong>Projects</strong> I'm involved in:</h2>
-                <p><a href="http://turnstyle.social" target="_blank">TurnStyle</a>,<a href="http://trafficalarm.co" target="_blank">Traffic Alarm</a></p>
+                <p><a href="http://turnstyle.social" target="_blank">TurnStyle</a>, <a href="http://trafficalarm.co" target="_blank">Traffic Alarm</a></p>
 
             </section>
 
             <section className="footnotes">
 
                 <h2>Footnotes</h2>
-                <p>View the <a href="https://github.com/duttonkj/portfolio" target="_blank">source</a> for this site on GitHub</p>
+				<p>Built with ReactJS, SASS, and Webpack<br/>
+                View the <a href="https://github.com/duttonkj/portfolio" target="_blank">source</a> for this site on GitHub</p>
 
             </section>
 		</View>

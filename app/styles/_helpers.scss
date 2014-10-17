@@ -12,3 +12,14 @@ html {
   white-space: nowrap;
   overflow: hidden;
 }
+
+
+// Clearfix
+
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

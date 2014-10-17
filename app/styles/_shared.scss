@@ -107,12 +107,12 @@ a{
 		text-transform:uppercase;
 		text-align:center;
 		line-height: 1;
-		color: $colorGreenDark;
+		color: $colorBrownDark;
 		font-familY: $fontSpartan;
-		background-color: rgba(220,220,220, 0.8);
+		background-color: rgba(242,235,204,0.4);
 
 		&:active{
-			background-color: rgba(220,220,220, 1.0);
+			background-color: rgba(242,235,204,1.0);
 
 		}
 
