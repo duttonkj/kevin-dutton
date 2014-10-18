@@ -1,14 +1,21 @@
 $viewPadding: 15px;
 
+@include respond-min($lg) {
+	$viewPadding: 80px;
+}
+
+
 .view{
 
 	padding: $viewPadding $viewPadding 100px $viewPadding;
+
+
 
 	h1{
 		margin-top:0;
 		margin-bottom:0;
 		font-size: 45px;
-		padding-top:60px;
+		padding-top:10px;
 		width: 50%;
 
 
@@ -47,7 +54,7 @@ section{
 		font-size:16px;
 
 		@include respond-min($lg) {
-			font-size: 25px;
+			font-size: 21px;
 		}
 	}
 
@@ -56,7 +63,7 @@ section{
 		margin: 0 0 0 0;
 
 		@include respond-min($lg) {
-			font-size: 25px;
+			font-size: 21px;
 		}
 	}
 
@@ -78,10 +85,13 @@ section{
 		}
 
 		@include respond-min($lg) {
+
 			@extend %clearfix;
+
 			float:none;
 			margin-top: 100px;
-			border: 0;
+			width: 100%;
+		//	border-top: 1px solid $colorGreenLight;
 
 
 		}
@@ -97,6 +107,8 @@ section{
 
 		padding-right: 40px;
 
+		border-top:0;
+
 	}
 
 
@@ -109,7 +121,7 @@ section{
 .view-enter.view-enter-active {
 	//transition: all 800ms ease;
 //	transform: scale3d(1.0,1.0,1);
-	animation-delay:600ms;
+	animation-delay:700ms;
 	transform-origin: 50% 200%;
 	animation-duration: 1000ms;
 	@extend .animation-jelly-in;
@@ -161,8 +173,8 @@ margin-right: -\$viewPadding; */
 	@include respond-min($lg) {
 
 		position:absolute;
-		right: 20%;
-		top: 20%;
+		right: 15%;
+		top: 25%;
 		width: 20%;
 
 	}
@@ -170,14 +182,31 @@ margin-right: -\$viewPadding; */
 }
 
 .lock-down{
-	width: 40%;
-	margin-top: 2em;
+	width: 45%;
+	margin-top: 1em;
 }
 
 
 .contact{
 	top:auto;
 	bottom:60px;
+
+	a{
+
+		@include respond-min($lg) {
+
+			margin-top: 2em;
+			float: left;
+			margin-right: 28px;
+
+			&.btn{
+				margin-top:1.4em;
+			}
+
+		}
+
+	}
+
 }
 
 .work{
@@ -197,7 +226,7 @@ margin-right: -\$viewPadding; */
 				float: right;
 
 				@include respond-min($lg) {
-					font-size: 20px;
+					font-size: 18px;
 				}
 			}
 

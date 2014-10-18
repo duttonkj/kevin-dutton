@@ -4,6 +4,11 @@ body{
 	color: #fff;
 	font-family: $fontRaleway;
 	background-color: $colorBrownDark;
+
+	@include respond-min($lg) {
+
+		font-size: 25px;
+	}
 }
 
 // Wrapper
@@ -86,6 +91,11 @@ p{
 	color: $colorGreenDark;
 	margin: 0;
 	padding: 14px 0 0 0;
+
+	@include respond-min($lg) {
+
+		font-size: 25px;
+	}
 }
 
 
@@ -108,11 +118,17 @@ a{
 		text-align:center;
 		line-height: 1;
 		color: $colorBrownDark;
-		font-familY: $fontSpartan;
+		font-family: $fontSpartan;
 		background-color: rgba(242,235,204,0.4);
+
 
 		&:active{
 			background-color: rgba(242,235,204,1.0);
+
+		}
+
+		@include respond-min($lg) {
+			padding: 17px 16px 8px 16px;
 
 		}
 
