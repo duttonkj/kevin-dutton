@@ -1,5 +1,5 @@
 {
-  "name": "react-starter",
+  "name": "kevin-dutton",
   "version": "0.0.0",
   "description": "https://github.com/webpack/react-starter",
   "main": "app/app.js",
@@ -17,7 +17,7 @@
     "boilerplate",
     "hot"
   ],
-  "author": "Tobias Koppers @sokra",
+  "author": "Kevin Dutton @duttonkj",
   "license": "MIT",
   "dependencies": {
     "autoprefixer-core": "^3.1.1",
@@ -27,8 +27,6 @@
     "file-loader": "^0.7.2",
     "html-loader": "^0.2.2",
     "jsx-loader": "^0.11.0",
-    "less": "^1.7.4",
-    "less-loader": "^0.7.5",
     "null-loader": "^0.1.0",
     "postcss-loader": "^0.1.0",
     "react": "^0.11.1",

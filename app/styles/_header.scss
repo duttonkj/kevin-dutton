@@ -171,7 +171,6 @@ header{
 
 			.mountains{
 
-
 				opacity:0.9;
 				@extend .animation-jelly-mountains-menu;
 
@@ -179,8 +178,11 @@ header{
 
 		}
 
-		&.menu-exit{
+		&.menu-leave{
 
+			.mountains{
+				@extend .animation-jelly-mountains-menu-leave;
+			}
 
 		}
 
@@ -212,6 +214,14 @@ header{
 	transform: translate3d(0, 0px,0) scale3d(1.0,1.0,1);
 
 	@extend .hide-text;
+
+
+/* 	@include respond-min(\$lg) {
+	width: 80px;
+	height: 80px;
+}
+ */
+
 
 }
 
@@ -373,18 +383,18 @@ nav{
 			}
 
 
-			@include respond-min($md) {
-				width: 300%;
-				left: -162%;
-				transform-origin:91% 100%;
-
-			}
-
-				@include respond-min($lg) {
-					width: 200%;
-					left: -75%;
-					transform-origin:87% 100%;
+				@include respond-min($md) {
+					width: 300%;
+					left: -162%;
+					transform-origin:91% 100%;
 
 				}
+
+					@include respond-min($lg) {
+						width: 200%;
+						left: -75%;
+						transform-origin:87% 100%;
+
+					}
 
 }

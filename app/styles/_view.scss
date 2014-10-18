@@ -1,13 +1,13 @@
 $viewPadding: 15px;
 
-@include respond-min($lg) {
-	$viewPadding: 80px;
-}
+/* @include respond-min(\$lg) {
+	\$viewPadding: 80px;
+} */
 
 
 .view{
 
-	padding: $viewPadding $viewPadding 100px $viewPadding;
+	padding: $viewPadding $viewPadding 30px $viewPadding;
 
 
 
@@ -15,12 +15,15 @@ $viewPadding: 15px;
 		margin-top:0;
 		margin-bottom:0;
 		font-size: 45px;
-		padding-top:10px;
-		width: 50%;
+		padding-top:50px;
+		width: 57%;
 
 
 		@include respond-min($lg) {
 			font-size: 70px;
+			padding-top:10px;
+
+
 		}
 
 	}
@@ -32,7 +35,10 @@ $viewPadding: 15px;
 
 	transform: scale3d(0.3,0.3,1);
 
-	border:2px solid red;
+
+	@include respond-min($lg) {
+		padding-bottom: 100px;
+	}
 
 	.btn{
 		margin-top: 30px;
@@ -90,7 +96,6 @@ section{
 
 			float:none;
 			margin-top: 100px;
-			width: 100%;
 		//	border-top: 1px solid $colorGreenLight;
 
 
@@ -133,7 +138,7 @@ section{
  	//transition: transform 200ms ease-out;
 	transform: translateY(0) scale3d(0.3,0.3,1);
 
-	@extend .animation-jelly-out;
+	//@extend .animation-jelly-out;
 }
 
 .view-leave.view-leave-active {
@@ -182,8 +187,12 @@ margin-right: -\$viewPadding; */
 }
 
 .lock-down{
-	width: 45%;
+
 	margin-top: 1em;
+
+	@include respond-min($lg) {
+		width: 45%;
+	}
 }
 
 

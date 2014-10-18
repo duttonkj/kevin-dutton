@@ -39,32 +39,26 @@ var AnimationHelper = {
 	},
 
 	componentWillEnter: function( done ) {
-		console.log('view will enter');
+
+
+		// trigger view to reset scroll position
+		Actions.viewMounted();
 
 		var _this = this;
-		//requestAnimationFrame(function() {
 
 			_this.setState({
 				willEnter: true
 			});
 
-	        //requestAnimationFrame(function() {
+			_this.setState({
+				didEnter: true
+			});
+
+			setTimeout(function(){
+				done();
+			},800)
 
 
-				_this.setState({
-					didEnter: true
-				});
-
-				setTimeout(function(){
-					done();
-				},800)
-
-	        //}.bind(this));
-
-	     //}.bind(this));
-
-
-		//done();
 	},
 	componentDidEnter: function() {
 

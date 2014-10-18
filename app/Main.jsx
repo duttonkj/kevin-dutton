@@ -27,12 +27,16 @@ var Contact = require('./Contact.jsx');
 // Components
 var Header = require('./_components/Header.jsx');
 
+// Reflux
+var Reflux = require('reflux');
+var Store = require('./_reflux/Store.js');
+
 
 
 
 var Main = React.createClass({
 
-	mixins: [ ActiveState ],
+	mixins: [ ActiveState, Reflux.listenTo(Store,"onViewMounted") ],
 
 	getInitialState: function () {
     	return {
@@ -48,13 +52,19 @@ var Main = React.createClass({
 		})
 	},
 
+	onViewMounted: function(){
+
+			// reset scrollposition for new view entering
+		    this.refs.viewport.getDOMNode().scrollTop = 0;
+
+	},
+
 	render: function() {
 
-		console.log(this.state);
 		return (
 			<div className="app">
 				<Header isIntroActive={this.state.isIntroActive} isRouteActive={this.state.isRouteActive} />
-				<div className="viewport">
+				<div className="viewport" ref="viewport">
 					<CSSTransitionGroup transitionName="view" component={React.DOM.div}>
 			          <this.props.activeRouteHandler />
 			        </CSSTransitionGroup>
