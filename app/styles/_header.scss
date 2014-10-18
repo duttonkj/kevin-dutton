@@ -157,9 +157,9 @@ header{
 		.block{
 			@extend .animation-jelly-in;
 
-			&.full{
-				@extend .animation-jelly-out;
-			}
+		/* 	&.full{
+			@extend .animation-jelly-out;
+		} */
 		}
 
 
@@ -188,11 +188,11 @@ header{
 			}
 
 			.block{
-				@extend .animation-jelly-in;
+				@extend .animation-jelly-out;
 
-				&.full{
-					@extend .animation-jelly-in;
-				}
+			/* 	&.full{
+				@extend .animation-jelly-in;
+			} */
 			}
 
 		}

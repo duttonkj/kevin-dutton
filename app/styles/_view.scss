@@ -181,7 +181,7 @@ margin-right: -\$viewPadding; */
 
 		position:absolute;
 		right: 15%;
-		top: 25%;
+		top: -32%;
 		width: 20%;
 
 	}
@@ -193,14 +193,20 @@ margin-right: -\$viewPadding; */
 	margin-top: 1em;
 
 	@include respond-min($lg) {
-		width: 45%;
+		width: 100%;
+
+
+
+		.btn{
+			width: 50%;
+		}
 	}
 }
 
 
 .contact{
 	top:auto;
-	bottom:60px;
+	bottom:40px;
 
 	a{
 
@@ -222,7 +228,11 @@ margin-right: -\$viewPadding; */
 
 .work{
 
+@include respond-min($lg) {
 
+	top:auto;
+	bottom:40px;
+}
 
 }
 
