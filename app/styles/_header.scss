@@ -117,6 +117,10 @@ header{
 
 		}
 
+		.block{
+			@extend .animation-jelly-out;
+		}
+
 	}
 
 //  Collapsed satte
@@ -146,9 +150,16 @@ header{
 
 		.mountains{
 
-			opacity:0.9;
-			@extend .animation-jelly-out;
+			@extend .animation-jelly-mountains-menu-leave;
 
+		}
+
+		.block{
+			@extend .animation-jelly-in;
+
+			&.full{
+				@extend .animation-jelly-out;
+			}
 		}
 
 
@@ -171,9 +182,17 @@ header{
 
 			.mountains{
 
-				opacity:0.9;
-				@extend .animation-jelly-mountains-menu;
+				opacity:1.0;
+				@extend .animation-jelly-in;
 
+			}
+
+			.block{
+				@extend .animation-jelly-in;
+
+				&.full{
+					@extend .animation-jelly-in;
+				}
 			}
 
 		}
@@ -222,6 +241,26 @@ header{
 }
  */
 
+
+}
+
+.block{
+
+	position:absolute;
+	left: 0;
+	bottom: 0;
+	right: 0;
+
+	z-index: 500;
+
+	background-color: $colorBrownUltraDark;
+	height: 64px;
+
+	transform-origin: 50% 150%;
+
+	&.full{
+		height: 130px;
+	}
 
 }
 
@@ -357,7 +396,7 @@ nav{
 	position:absolute;
 	bottom: 0;
 	left:-380%;
-	z-index: 500;
+	z-index: 499;
 
 	filter: sepia(1);
 
@@ -365,20 +404,20 @@ nav{
 
 	opacity: 0.1;
 
-	transform-origin:88% 102%;
+	transform-origin:50% 100%;
 
 
 		@include respond-min($sm) {
 			width: 450%;
 			left: -256%;
-			transform-origin:86% 100%;
+			//transform-origin:50% 100%;
 
 		}
 
 			@include respond-min(500px) {
 				width: 320%;
 				left: -162%;
-				transform-origin:85% 100%;
+				//transform-origin:50% 100%;
 
 			}
 
@@ -386,14 +425,14 @@ nav{
 				@include respond-min($md) {
 					width: 300%;
 					left: -162%;
-					transform-origin:91% 100%;
+					//transform-origin:91% 100%;
 
 				}
 
 					@include respond-min($lg) {
 						width: 200%;
 						left: -75%;
-						transform-origin:87% 100%;
+						//transform-origin:87% 66%;
 
 					}
 

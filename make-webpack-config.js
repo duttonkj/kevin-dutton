@@ -25,7 +25,6 @@ module.exports = function(options) {
 	};
 	var stylesheetLoaders = {
 		"css": "css-loader!postcss-loader",
-		"less": "css-loader!less-loader",
 		"styl": "css-loader!stylus-loader",
 		"scss": "style!css!postcss-loader!sass?outputStyle=expanded&includePaths[]=./",
 	}
