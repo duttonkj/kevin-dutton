@@ -21,7 +21,7 @@ $viewPadding: 15px;
 
 		@include respond-min($lg) {
 			font-size: 70px;
-			padding-top:10px;
+			padding-top:50px;
 
 
 		}
@@ -38,6 +38,8 @@ $viewPadding: 15px;
 
 	@include respond-min($lg) {
 		padding-bottom: 100px;
+		padding-right: 60px;
+		padding-left: 60px;
 	}
 
 	.btn{
