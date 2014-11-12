@@ -7,7 +7,8 @@
     "raleway": "https://github.com/theleagueof/raleway.git",
     "sass-mq": "~2.1.1",
     "sass-ie": "https://github.com/jakearchibald/sass-ie.git",
-    "normalize.css": "~3.0.1"
+    "normalize.css": "~3.0.1",
+    "underscore": "~1.7.0"
   },
   "devDependencies": {}
 }

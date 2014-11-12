@@ -21,8 +21,10 @@ var ActiveState = Router.ActiveState;
 // Pages
 var Intro = require('./Intro.jsx');
 var About = require('./About.jsx');
+//var Work = require('./WorkProtected.jsx');
 var Work = require('./Work.jsx');
 var Contact = require('./Contact.jsx');
+var Project = require('./Project.jsx');
 
 // Components
 var Header = require('./_components/Header.jsx');
@@ -48,7 +50,7 @@ var Main = React.createClass({
 	updateActiveState: function () {
 		this.setState({
 			isIntroActive: this.isActive('intro'),
-			isRouteActive: this.isActive('work') || this.isActive('about') || this.isActive('contact')
+			isRouteActive: this.isActive('work') || this.isActive('about') || this.isActive('contact') || this.isActive('project')
 		})
 	},
 
@@ -82,6 +84,7 @@ var Application = (
 			<Route name="intro" path="/" handler={Intro} addHandlerKey={true} classId="intro" />
 			<Route name="about" path="about" handler={About} addHandlerKey={true} classId="about" />
 			<Route name="work" path="work" handler={Work} addHandlerKey={true} classId="work" />
+			<Route name="project" path="/work/:projectSlug" handler={Project} />
 			<Route name="contact" path="contact" handler={Contact} addHandlerKey={true} classId="contact" />
 		</Route>
 	</Routes>

@@ -2,8 +2,9 @@
 var React = require("react");
 
 var View = require("./_components/View.jsx");
-
 var AnimationHelper = require("./_components/AnimationHelper.js");
+
+var ProjectList = require("./_components/ProjectList.jsx");
 
 var Work = React.createClass({
 
@@ -13,14 +14,13 @@ var Work = React.createClass({
 
 		return (
 		<View classRoute={this.props.classId}  willEnter={this.state.willEnter} didEnter={this.state.didEnter}>
-			<h1>Work</h1>
 
-			<object className="lock" type="image/svg+xml" data="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE1LjAuMiwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHdpZHRoPSIyMTguMzI1cHgiIGhlaWdodD0iMjY5Ljc3M3B4IiB2aWV3Qm94PSIwIDAgMjE4LjMyNSAyNjkuNzczIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAyMTguMzI1IDI2OS43NzMiCgkgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPGRlZnM+CgkJPHJlY3QgaWQ9IlNWR0lEXzFfIiB4PSItMjc4LjY3NCIgeT0iLTE1Ny4wMiIgd2lkdGg9Ijc5MiIgaGVpZ2h0PSI2MTIiLz4KCTwvZGVmcz4KCTxjbGlwUGF0aCBpZD0iU1ZHSURfMl8iPgoJCTx1c2UgeGxpbms6aHJlZj0iI1NWR0lEXzFfIiAgb3ZlcmZsb3c9InZpc2libGUiLz4KCTwvY2xpcFBhdGg+Cgk8cGF0aCBjbGlwLXBhdGg9InVybCgjU1ZHSURfMl8pIiBmaWxsPSIjRTBENjgyIiBkPSJNMTc3Ljg2MywxMDAuNjYySDQwLjQ2MUMxOC4xMTUsMTAwLjY2MiwwLDExNy44MDUsMCwxMzguOTUydjkyLjUzMgoJCWMwLDIxLjE0NywxOC4xMTUsMzguMjksNDAuNDYxLDM4LjI5aDEzNy40MDJjMjIuMzQ2LDAsNDAuNDYyLTE3LjE0Myw0MC40NjItMzguMjl2LTkyLjUzMgoJCUMyMTguMzI1LDExNy44MDUsMjAwLjIwOCwxMDAuNjYyLDE3Ny44NjMsMTAwLjY2MiBNMTI3LjcyOSwyMTkuNjY3aC0xOC41NjZoLTAuNDQ4SDkwLjU5Nmw0LjQyOC0zMC41NTcKCQljLTQuNjctNC4wMi03Ljc4NC05Ljc3My03Ljc4NC0xNi40MTljMC0xMi4xMDYsOS44MTUtMjEuOTIyLDIxLjkyMi0yMS45MjJjMTIuMTA4LDAsMjEuOTIyLDkuODE1LDIxLjkyMiwyMS45MjIKCQljMCw2LjcyOS0zLjIwMywxMi41MjctNy45NzUsMTYuNTQ4TDEyNy43MjksMjE5LjY2N3oiLz4KCTxwYXRoIGNsaXAtcGF0aD0idXJsKCNTVkdJRF8yXykiIGZpbGw9IiNFMEQ2ODIiIGQ9Ik0xMDkuMTYyLDBDMTcuMDAxLDAsMjUuOTQ4LDk1Ljc0LDI1Ljk0OCw5NS43NEg1OS45NQoJCWMwLDAtNS4zNjgtNTcuMjY0LDQ5LjIxMi01Ny4yNjRjNTQuNTgyLDAsNDkuMjEzLDU3LjI2NCw0OS4yMTMsNTcuMjY0aDM0LjAwMUMxOTIuMzc2LDk1Ljc0LDIwMS4zMjQsMCwxMDkuMTYyLDAiLz4KPC9nPgo8L3N2Zz4="></object>
+			<h1>Selected Work</h1>
 
-			<div className="lock-down">
-				<p>I have been employed in the pharma industry for the past 5 years.  Due to the nature of the work and contracts with clients, I am unable to present work publicly.  Please contact me If you wold would like access.</p>
-				<a href="mailto:duttonkj@gmail.com" className="btn">duttonkj@gmail.com</a>
-			</div>
+			<p>Here is a my curret selected projects</p>
+
+			<ProjectList />
+
 		</View>
 		);
 	}
