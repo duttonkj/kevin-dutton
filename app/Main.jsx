@@ -43,14 +43,16 @@ var Main = React.createClass({
 	getInitialState: function () {
     	return {
 			isIntroActive: false,
-			isRouteActive: false
+			isRouteActive: false,
+			showBackButton: false
 		};
 	},
 
 	updateActiveState: function () {
 		this.setState({
 			isIntroActive: this.isActive('intro'),
-			isRouteActive: this.isActive('work') || this.isActive('about') || this.isActive('contact') || this.isActive('project')
+			isRouteActive: this.isActive('work') || this.isActive('about') || this.isActive('contact') || this.isActive('project'),
+			showBackButton: this.isActive('project')
 		})
 	},
 
@@ -65,7 +67,7 @@ var Main = React.createClass({
 
 		return (
 			<div className="app">
-				<Header isIntroActive={this.state.isIntroActive} isRouteActive={this.state.isRouteActive} />
+				<Header isIntroActive={this.state.isIntroActive} isRouteActive={this.state.isRouteActive} showBackButton={this.state.showBackButton} />
 				<div className="viewport" ref="viewport">
 					<CSSTransitionGroup transitionName="view" component={React.DOM.div}>
 			          <this.props.activeRouteHandler />
@@ -84,7 +86,7 @@ var Application = (
 			<Route name="intro" path="/" handler={Intro} addHandlerKey={true} classId="intro" />
 			<Route name="about" path="about" handler={About} addHandlerKey={true} classId="about" />
 			<Route name="work" path="work" handler={Work} addHandlerKey={true} classId="work" />
-			<Route name="project" path="/work/:projectSlug" handler={Project} />
+			<Route name="project" path="/work/:projectSlug" handler={Project} addHandlerKey={true} />
 			<Route name="contact" path="contact" handler={Contact} addHandlerKey={true} classId="contact" />
 		</Route>
 	</Routes>

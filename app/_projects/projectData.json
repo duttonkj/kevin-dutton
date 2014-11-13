@@ -1,7 +1,20 @@
 [
 	{
-		"name": "Test Project 1",
-		"slug": "test-project-1"
+		"name": "Give Them Ten",
+		"slug": "give-them-ten",
+		"desc": "Quick description of the project goes here",
+		"images": [
+			{ "filename":"mobile-home.png", "ratio":"0.1125" }
+		],
+		"videos": [
+			"Bt0I6mXYq7s"
+		],
+		"tools":[
+			"gulp",
+			"sass",
+			"Google Maps & API",
+			"Modx"
+		]
 	},
 	{
 		"name": "Test Project 2",

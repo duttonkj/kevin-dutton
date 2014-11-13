@@ -208,8 +208,10 @@ header{
 
 		&.show-back-btn{
 
-			.back-btn{
-				transform: translate3d(0, 0px,0) scale3d(1.0,1.0,1);
+			.btn-back{
+
+				transform: translate3d(0,0,0) scale3d(1.0,1.0,1);
+				
 			}
 
 			.logo{

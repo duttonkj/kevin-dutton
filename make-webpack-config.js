@@ -68,7 +68,9 @@ module.exports = function(options) {
 			}
 		},
 		new webpack.PrefetchPlugin("react"),
-		new webpack.PrefetchPlugin("react/lib/ReactComponentBrowserEnvironment")
+		new webpack.PrefetchPlugin("react/lib/ReactComponentBrowserEnvironment"),
+		new webpack.ProvidePlugin({ "_": "underscore" }),
+		new webpack.ProvidePlugin({ "$": "jquery" })
 	];
 	if(options.prerender) {
 		aliasLoader["react-proxy$"] = "react-proxy/unavailable";
