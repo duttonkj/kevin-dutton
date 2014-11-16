@@ -4,7 +4,7 @@ var React = require("react");
 var ImageLoader = require('./Image.jsx');
 
 // Include Zepto
-var FitVids = require('../bower_components/fitvids/jquery.fitvids.js');
+//var FitVids = require('../bower_components/fitvids/jquery.fitvids.js');
 
 var ProjectDetails = React.createClass({
 
@@ -46,7 +46,7 @@ var ProjectDetails = React.createClass({
     if(this.props.data.videos){
           var videoItems = this.props.data.videos.map(function (video) {
 
-            var videoUrl = "//www.youtube.com/embed/"+video+'?rel=0&showinfo=0';
+            var videoUrl = "//www.youtube.com/embed/"+video+'?rel=0&showinfo=0&controls=0&autohide=0';
             return (
                 <iframe width="420" height="315" src={videoUrl} frameborder="0" allowfullscreen></iframe>
             );
