@@ -86,7 +86,7 @@ var Application = (
 			<Route name="intro" path="/" handler={Intro} addHandlerKey={true} classId="intro" />
 			<Route name="about" path="about" handler={About} addHandlerKey={true} classId="about" />
 			<Route name="work" path="work" handler={Work} addHandlerKey={true} classId="work" />
-			<Route name="project" path="/work/:projectSlug" handler={Project} addHandlerKey={true} />
+			<Route name="project" path="/work/:projectSlug" handler={Project} classId="project" addHandlerKey={true} />
 			<Route name="contact" path="contact" handler={Contact} addHandlerKey={true} classId="contact" />
 		</Route>
 	</Routes>

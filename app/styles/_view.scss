@@ -138,7 +138,7 @@ section{
 .view-leave {
  	//transform: translateX(0);
  	//transition: transform 200ms ease-out;
-	transform: translateY(0) scale3d(0.3,0.3,1);
+	transform: translateY(-120%) scale3d(1.0,1.0,1);
 
 	//@extend .animation-jelly-out;
 }
@@ -154,17 +154,17 @@ section{
 
 //Bio
 .bio{
+
 	background-color: $colorBrownDark;
-/* 	margin-left: -\$viewPadding;
-margin-right: -\$viewPadding; */
+	/* 	margin-left: -\$viewPadding;
+	margin-right: -\$viewPadding; */
 	margin-top:15px;
-
-
 
 	p{
 		color: #fff;
 		padding: 30px;
 	}
+
 }
 
 // Lock{

@@ -10,12 +10,14 @@ var ProjectListItem = React.createClass({
   render: function() {
 
 	return (
-    	<div className="project-list-item">
+
+        <div className="project-list-item">
 
 			<p>{this.props.name}</p>
 			<Link to="project" params={{projectSlug: this.props.slug}}>View</Link>
 
 		</div>
+        
     );
 
 

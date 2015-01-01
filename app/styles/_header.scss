@@ -211,7 +211,23 @@ header{
 			.btn-back{
 
 				transform: translate3d(0,0,0) scale3d(1.0,1.0,1);
-				
+
+			}
+
+			.logo{
+
+				transform: translate3d(0,200px,0) scale3d(0.6,0.6,1);
+
+			}
+
+		}
+
+		&.show-close-btn{
+
+			.btn-close{
+
+				transform: translate3d(0,0,0) scale3d(1.0,1.0,1);
+
 			}
 
 			.logo{
@@ -458,6 +474,26 @@ nav{
 
 // Back button
 .btn-back{
+
+	display:block;
+	padding: 28px 40px;
+	border:1px solid red;
+	font-size: 25px;
+	position:absolute;
+	left: 0;
+	top: 0;
+
+	z-index:501;
+
+	transition: all 400ms ease;
+	transform-origin: 0% 50%;
+	transform: translate3d(0, 200px,0) scale3d(1.0,1.0,1);
+
+}
+
+
+// Close button
+.btn-close{
 
 	display:block;
 	padding: 28px 40px;
