@@ -16,7 +16,7 @@ module.exports = React.createClass({
 
 		console.log('renderVideo: %s', this.props.videoId);
 
-		var videoUrl = "//www.youtube.com/embed/"+this.props.videoId+'?rel=0&showinfo=0&controls=0&autohide=0';
+		var videoUrl = "//www.youtube.com/embed/"+this.props.videoId+'?rel=0&showinfo=0&controls=0&autohide=0&enablejsapi=1';
 
 		// Should we autoplay
 		if( this.props.autoplay ){
@@ -26,9 +26,12 @@ module.exports = React.createClass({
 		return (
 
 			<div className={classes}>
-
-				<iframe width="727" height="545" src={videoUrl} frameborder="0" allowfullscreen></iframe>
-
+				<a href="#" className="done btn">Done</a>
+				<div className="video-wrapper">
+					<div id="project-video-player" className='embed-container'>
+						<iframe src={videoUrl} frameborder="0" allowfullscreen></iframe>
+					</div>
+				</div>
 			</div>
 
 		);

@@ -9,6 +9,15 @@ module.exports = Reflux.createStore({
     onViewMounted: function(){
         console.log('Store: send view action');
         this.trigger();
+    },
+
+    onCloseButtonShow: function(){
+        console.log('Store: send view action');
+        this.trigger();
+    },
+
+    onCloseButtonHide: function(){
+        this.trigger();
     }
 
 });

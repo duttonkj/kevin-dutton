@@ -17,8 +17,6 @@ var Work = React.createClass({
 
 			<h1>Selected Work</h1>
 
-			<p>Here is a my curret selected projects</p>
-
 			<ProjectList />
 
 		</View>

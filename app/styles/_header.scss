@@ -59,6 +59,15 @@ header{
 
 	}
 
+	// Button
+	.btn{
+		font-size: 16px;
+		margin: 20px 0 0 20px;
+
+
+	}
+
+
 
 //  Intro State
 	&.intro{
@@ -477,7 +486,6 @@ nav{
 
 	display:block;
 	padding: 28px 40px;
-	border:1px solid red;
 	font-size: 25px;
 	position:absolute;
 	left: 0;

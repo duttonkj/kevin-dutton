@@ -21,8 +21,8 @@ var ActiveState = Router.ActiveState;
 // Pages
 var Intro = require('./Intro.jsx');
 var About = require('./About.jsx');
-var Work = require('./WorkProtected.jsx');
-//var Work = require('./Work.jsx');
+//var Work = require('./WorkProtected.jsx');
+var Work = require('./Work.jsx');
 var Contact = require('./Contact.jsx');
 var Project = require('./Project.jsx');
 
@@ -38,13 +38,17 @@ var Store = require('./_reflux/Store.js');
 
 var Main = React.createClass({
 
-	mixins: [ ActiveState, Reflux.listenTo(Store,"onViewMounted") ],
+	mixins: [
+		ActiveState,
+		Reflux.listenTo(Store,"onViewMounted"),
+	],
 
 	getInitialState: function () {
     	return {
 			isIntroActive: false,
 			isRouteActive: false,
-			showBackButton: false
+			showBackButton: false,
+			showCloseButton: false,
 		};
 	},
 
@@ -53,21 +57,34 @@ var Main = React.createClass({
 			isIntroActive: this.isActive('intro'),
 			isRouteActive: this.isActive('work') || this.isActive('about') || this.isActive('contact') || this.isActive('project'),
 			showBackButton: this.isActive('project')
-		})
+		});
 	},
 
 	onViewMounted: function(){
-
 			// reset scrollposition for new view entering
 		    this.refs.viewport.getDOMNode().scrollTop = 0;
 
 	},
 
+	// onCloseButtonShow: function(){
+	// 	this.setState({
+	// 		showCloseButton: true,
+	// 		showBackButton: false
+	// 	});
+	// },
+
+	// onCloseButtonHide: function(){
+	// 	this.setState({
+	// 		showCloseButton: false,
+	// 		showBackButton: true
+	// 	})
+	// },
+
 	render: function() {
 
 		return (
 			<div className="app">
-				<Header isIntroActive={this.state.isIntroActive} isRouteActive={this.state.isRouteActive} showBackButton={this.state.showBackButton} />
+				<Header isIntroActive={this.state.isIntroActive} isRouteActive={this.state.isRouteActive} showBackButton={this.state.showBackButton} showCloseButton={this.state.showCloseButton} />
 				<div className="viewport" ref="viewport">
 					<CSSTransitionGroup transitionName="view" component={React.DOM.div}>
 			          <this.props.activeRouteHandler />

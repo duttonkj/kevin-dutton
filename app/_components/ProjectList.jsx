@@ -75,7 +75,7 @@ var ProjectList = React.createClass({
 	if(this.state.projects.length > 0){
     	projectNodes = this.state.projects.map(function (project) {
 	      return (
-	          <ProjectListItem name={project.name} slug={project.slug} />
+	          <ProjectListItem name={project.name} images={project.images} slug={project.slug} />
 	      );
     	});
 	}

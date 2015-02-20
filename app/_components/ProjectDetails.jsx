@@ -4,6 +4,9 @@ var React = require("react");
 var ImageLoader = require('./Image.jsx');
 var VideoPlayer = require('./VideoPlayer.jsx');
 
+var Actions = require("../_reflux/Actions.js");
+
+
 // Include Zepto
 //var FitVids = require('../bower_components/fitvids/jquery.fitvids.js');
 
@@ -13,14 +16,12 @@ var ProjectDetails = React.createClass({
     getInitialState: function() {
         return {
             showPlayer: false,
-            videoId: '8ZXWdR7RzV8',
+            videoId: '0',
             videoAutoPlay: false
         }
     },
 
     componentDidMount: function(){
-        console.log('PROJECT DETAILS MOUNTED');
-        //$(this.refs.projectVideos.getDomNode()).fitVids();
     },
 
     // Show Video Player
@@ -35,11 +36,16 @@ var ProjectDetails = React.createClass({
             videoAutoPlay: true
 		});
 
+
+        //alert('call close button');
+        Actions.viewMounted();
+
     },
 
-    // Close video player if open
+
     handleBgClick: function () {
 
+        // Close video player if open
 
         console.log('bg click')
         console.log( 'state: %s', this.state.showPlayer)
@@ -49,11 +55,28 @@ var ProjectDetails = React.createClass({
             });
         }
 
+        this.pauseVideo();
+
+        //Actions.closeButtonHide();
+
+    },
+
+    pauseVideo: function (state) {
+        var div = document.getElementById("project-video-player");
+        var iframe = div.getElementsByTagName("iframe")[0].contentWindow;
+        func = state == 'hide' ? 'pauseVideo' : 'playVideo';
+        iframe.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
     },
 
     render: function() {
 
         var _this = this;
+
+        var cx = React.addons.classSet;
+        var classes = cx({
+            'project-details': true,
+            'blur': this.state.showPlayer
+        });
 
         // Desc
         var desc;
@@ -84,13 +107,18 @@ var ProjectDetails = React.createClass({
 
             var _this = this;
 
+            var btnClasses = 'btn project-video-link';
+
+               btnClasses += (this.props.data.videos.length < 2 ) ? ' single' : ' multiple';
+
               var videoLinks = this.props.data.videos.map(function (video) {
 
-                return ( <a className="btn project-video-link" onClick={_this.handleVideoClick.bind(null,video.id)} href="#" data-youtube="{video.id}">{video.caption}</a> );
+
+                return ( <a className={btnClasses} onClick={_this.handleVideoClick.bind(null,video.id)} href="#" data-youtube="{video.id}">{video.caption}</a> );
 
               });
 
-              var videos = ( <div className="project-videos" ref="projectVideos">{videoLinks}</div> );
+              var videos = ( <div className="project-videos" ref="projectVideos"><h3>Video Experience</h3>{videoLinks}</div> );
         }
 
         // Tools
@@ -102,23 +130,34 @@ var ProjectDetails = React.createClass({
                 );
               });
 
-              var tools = ( <div className="project-tools"><h3>Frameworks/Tools</h3><ul>{toolItems}</ul></div> );
+              var tools = ( <div className="project-tools"><ul>{toolItems}</ul></div> );
+        }
+
+        // Site Link
+        var projectLink;
+        if(this.props.data.link){
+
+            var link = this.props.data.link;
+            var projectLink = ( <div className="project-link"><a className="btn project-link-btn" href={link} target="_blank">Visit Site</a></div> );
+
         }
 
         return (
-        	<div className="project-details" onClick={this.handleBgClick}>
+        	<div className={classes} onClick={this.handleBgClick}>
 
-                {images}
+                <div className="project-blur">
+                    {images}
 
-                <div className="project-summary">
-                    <h1>{this.props.data.name}</h1>
-                    {desc}
-                    {videos}
-                    {tools}
+                    <div className="project-summary">
+                        <h1>{this.props.data.name}</h1>
+                        {desc}
+                        {tools}
+                        {videos}
+                        {projectLink}
+                    </div>
                 </div>
 
-                
-                
+
                 <VideoPlayer showPlayer={this.state.showPlayer} videoId={this.state.videoId} autoplay={this.state.videoAutoPlay} />
 
         	</div>

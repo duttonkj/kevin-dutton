@@ -78,19 +78,7 @@ section{
 
 
 	&.footnotes{
-		h2{
-			font-size: 0.7em;
-			@include respond-min($lg) {
-				font-size: 0.9em;
-			}
-		}
-		p{
-			font-size:0.7em;
 
-			@include respond-min($lg) {
-				font-size: 0.9em;
-			}
-		}
 
 		@include respond-min($lg) {
 
@@ -101,6 +89,20 @@ section{
 		//	border-top: 1px solid $colorGreenLight;
 
 
+		}
+
+		h2{
+			font-size: 0.7em;
+			@include respond-min($lg) {
+				font-size: 0.9em;
+			}
+		}
+		p{
+			font-size:0.5em;
+
+			@include respond-min($lg) {
+				font-size: 0.5em;
+			}
 		}
 
 
@@ -128,17 +130,21 @@ section{
 .view-enter.view-enter-active {
 	//transition: all 800ms ease;
 //	transform: scale3d(1.0,1.0,1);
-	animation-delay:700ms;
-	transform-origin: 50% 200%;
-	animation-duration: 1000ms;
+	animation-delay:200ms;
+	transform-origin: 50% 300%;
+	animation-duration: 3000ms;
 	@extend .animation-jelly-in;
 }
 
 
 .view-leave {
+
+	transition: opacity 200ms ease;
+	opacity: 0;
+
  	//transform: translateX(0);
  	//transition: transform 200ms ease-out;
-	transform: translateY(-120%) scale3d(1.0,1.0,1);
+	//transform: translateY(-120%) scale3d(1.0,1.0,1);
 
 	//@extend .animation-jelly-out;
 }
@@ -147,6 +153,8 @@ section{
  	//transform: translateX(-100%) rotate(30deg);
 	/* transform: translateY(0) scale3d(0.3,0.3,1);
 	animation-delay:0ms;
+		animation-duration: 600ms;
+
 	@extend .animation-jelly-out; */
 }
 
@@ -227,11 +235,12 @@ section{
 }
 
 .work{
+	right: 0 !important;
 
 @include respond-min($lg) {
 
-	top:auto;
-	bottom:40px;
+//	top:auto;
+//	bottom:40px;
 }
 
 }

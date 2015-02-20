@@ -8,9 +8,7 @@ var AnimationHelper = require("./_components/AnimationHelper.js");
 
 var ImageLoader = require('./_components/Image.jsx');
 
-console.log('hers the image loader');
 var ImageSrc = require('./images/kevin-dutton.jpg');
-console.log(ImageLoader);
 
 
 var About = React.createClass({
