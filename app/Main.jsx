@@ -21,8 +21,8 @@ var ActiveState = Router.ActiveState;
 // Pages
 var Intro = require('./Intro.jsx');
 var About = require('./About.jsx');
-//var Work = require('./WorkProtected.jsx');
-var Work = require('./Work.jsx');
+var Work = require('./WorkProtected.jsx');
+//var Work = require('./Work.jsx');
 var Contact = require('./Contact.jsx');
 var Project = require('./Project.jsx');
 
@@ -102,7 +102,7 @@ var Application = (
 		<Route handler={Main}>
 			<Route name="intro" path="/" handler={Intro} addHandlerKey={true} classId="intro" />
 			<Route name="about" path="about" handler={About} addHandlerKey={true} classId="about" />
-			<Route name="work" path="work" handler={Work} addHandlerKey={true} classId="work" />
+			<Route name="work" path="work" handler={Work} addHandlerKey={true} classId="work protected" />
 			<Route name="project" path="/work/:projectSlug" handler={Project} classId="project" addHandlerKey={true} />
 			<Route name="contact" path="contact" handler={Contact} addHandlerKey={true} classId="contact" />
 		</Route>

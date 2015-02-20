@@ -239,8 +239,12 @@ section{
 
 @include respond-min($lg) {
 
-//	top:auto;
-//	bottom:40px;
+
+}
+
+&.protected{
+		top:auto;
+		bottom:40px;
 }
 
 }
