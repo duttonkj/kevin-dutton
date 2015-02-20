@@ -86,11 +86,11 @@ var ProjectDetails = React.createClass({
 
               var videoLinks = this.props.data.videos.map(function (video) {
 
-                return ( <a className="project-video-link" onClick={_this.handleVideoClick.bind(null,video)} href="#" data-youtube="{video}">Watch Video</a> );
+                return ( <a className="btn project-video-link" onClick={_this.handleVideoClick.bind(null,video.id)} href="#" data-youtube="{video.id}">{video.caption}</a> );
 
               });
 
-              var videos = ( <div className="project-videos" ref="projectVideos"><h3>Interactions</h3>{videoLinks}</div> );
+              var videos = ( <div className="project-videos" ref="projectVideos">{videoLinks}</div> );
         }
 
         // Tools
@@ -108,11 +108,17 @@ var ProjectDetails = React.createClass({
         return (
         	<div className="project-details" onClick={this.handleBgClick}>
 
-                <h1>{this.props.data.name}</h1>
-                {desc}
-                {videos}
-                {tools}
                 {images}
+
+                <div className="project-summary">
+                    <h1>{this.props.data.name}</h1>
+                    {desc}
+                    {videos}
+                    {tools}
+                </div>
+
+                
+                
                 <VideoPlayer showPlayer={this.state.showPlayer} videoId={this.state.videoId} autoplay={this.state.videoAutoPlay} />
 
         	</div>

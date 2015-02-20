@@ -1,14 +1,38 @@
 [
+	
 	{
-		"name": "Give Them Ten",
-		"slug": "give-them-ten",
-		"desc": "Quick description of the project goes here",
+		"name": "Safelite Solutions",
+		"slug": "safelite",
+		"desc": "Safelite auto, responsiive",
 		"images": [
-			{ "filename":"mobile-home.png", "ratio":"0.1125" }
+			{ "filename":"mobile.jpg", "ratio":"0.5971" }
 		],
-		"videos": [
-			"Bt0I6mXYq7s"
+		"videos": [{
+			"id":"zkFRYVZFfmw",
+			"caption" : "Mobile Interactions"
+		},
+		{
+			"id":"bv9CsuOismw",
+			"caption" : "Desktop Interactions"
+		}],
+		"tools":[
+			"gulp",
+			"sass",
+			"Wordpress"
 		],
+		"href":"http://safelitesolutions.com"
+	},
+	{
+		"name": "Trulicity Self-Directed Modules",
+		"slug": "trulicity",
+		"desc": "Diabetes, Eli Lilly",
+		"images": [
+			{ "filename":"desktop.jpg", "ratio":"1.4566" }
+		],
+		"videos": [{
+			"id":"8TbFgWH_8hQ",
+			"caption" : "Desktop Interactions"
+		}],
 		"tools":[
 			"gulp",
 			"sass",
@@ -17,12 +41,64 @@
 		]
 	},
 	{
-		"name": "Test Project 2",
-		"slug": "test-project-2"
+		"name": "Cimzia",
+		"slug": "cimzia",
+		"desc": "UCB, responsive",
+		"images": [
+			{ "filename":"mobile.jpg", "ratio":"0.6720" }
+		],
+		"videos": [{
+			"id":"P0ZfldEVhKs",
+			"caption" : "Mobile Interactions"
+		},{
+			"id":"pZMKfjtKMxk",
+			"caption" : "Desktop Interactions"
+		}],
+		"tools":[
+			"gulp",
+			"sass",
+			"Oracle Database",
+			"Laravel"
+		],
+		"href":"http://cimzia.com"
 	},
 	{
-		"name": "Test Project 3",
-		"slug": "test-project-3"
+		"name": "Give Them Ten",
+		"slug": "give-them-ten",
+		"desc": "Quick description of the project goes here",
+		"images": [
+			{ "filename":"mobile.jpg", "ratio":"0.5971" }
+		],
+		"videos": [{
+			"id":"mzGVStI1NQo",
+			"caption" : "Mobile Interactions"
+		},
+		{
+			"id":"0E_cBzMdz1g",
+			"caption" : "Desktop Interactions"
+		}],
+		"tools":[
+			"gulp",
+			"sass",
+			"Google Maps & API",
+			"Modx"
+		],
+		"href":"http://givethemten.org"
+	},
+	{
+		"name": "Gatorade",
+		"slug": "gatorade",
+		"desc": "iPad Prototye",
+		"images": [
+			{ "filename":"desktop.jpg", "ratio":"1.4065" }
+		],
+		"videos": [{
+			"id":"DV_IAKoyli8",
+			"caption" : "Touch Interactions"
+		}],
+		"tools":[
+			"xcode",
+			"objective-c"
+		]
 	}
-
 ]
