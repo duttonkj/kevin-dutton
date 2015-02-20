@@ -25,7 +25,7 @@ var About = React.createClass({
 
 			<div className="bio">
 				<ImageLoader src={ImageSrc} aspectRatio={2.0} />
-				<p>Kevin is a full stack developer with 14 years professional experience.   He has built solutions for fortune 50 companies, health care professionals, patients, and consumers.  He began programming for the web and has recently focused on responsive design and developing for the iOS platform. Kevin appreciates great design and enjoys tackling complex interfaces and problems.</p>
+				<p>I am a full stack developer with 14 years professional experience who has built solutions for Fortune 50 companies, health care professionals, patients, and consumers.  I began programming for the web and have recently focused on responsive design and developing for the iOS platform. I appreciate great design and enjoy tackling complex interfaces and problems.</p>
 			</div>
 			<section>
 

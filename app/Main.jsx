@@ -21,8 +21,8 @@ var ActiveState = Router.ActiveState;
 // Pages
 var Intro = require('./Intro.jsx');
 var About = require('./About.jsx');
-//var Work = require('./WorkProtected.jsx');
-var Work = require('./Work.jsx');
+var Work = require('./WorkProtected.jsx');
+//var Work = require('./Work.jsx');
 var Contact = require('./Contact.jsx');
 var Project = require('./Project.jsx');
 
