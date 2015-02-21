@@ -59,6 +59,13 @@
 	h1{
 		font-size: 50px;
 		width: 100%;
+		padding-top: 25px;
+
+		@include respond-min($md) {
+			padding-top:50px;
+		}
+
+
 
 	}
 
