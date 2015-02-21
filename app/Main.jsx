@@ -98,7 +98,7 @@ var Main = React.createClass({
 var workClasses = 'work';
 workClasses += ( showProtected ) ? ' protected' : '';
 
-var Application = (
+module.exports = (
 	<Routes location="history">
 		<Route handler={Main}>
 			<Route name="intro" path="/" handler={Intro} addHandlerKey={true} classId="intro" />
@@ -109,6 +109,3 @@ var Application = (
 		</Route>
 	</Routes>
 );
-
-
-module.exports = Application;
