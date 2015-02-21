@@ -6,8 +6,7 @@
     "league-spartan": "https://github.com/theleagueof/league-spartan.git",
     "raleway": "https://github.com/theleagueof/raleway.git",
     "sass-ie": "https://github.com/jakearchibald/sass-ie.git",
-    "normalize.css": "~3.0.1",
-    "fitvids": "~1.1.0"
+    "normalize.css": "~3.0.1"
   },
   "devDependencies": {}
 }
