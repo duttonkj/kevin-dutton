@@ -1,8 +1,33 @@
 /** @jsx React.DOM */
 var React = require('react')
+var DetectTransitionEnd = require('./DetectTransition');
 
 // Video Player  N
 module.exports = React.createClass({
+
+	mixins: [DetectTransitionEnd],
+
+	getInitialState: function() {
+		return {
+			videoInit: false
+		};
+	},
+
+	componentDidMount: function() {
+		console.log('Video Player mounted');
+
+		var _this = this;
+
+
+		var transitionEvent = this.whichTransitionEvent();
+		transitionEvent && this.getDOMNode().addEventListener(transitionEvent, function() {
+			console.log('Transition complete!  This is the callback, no library needed!');
+			_this.setState({
+				videoInit: true
+			});
+		});
+
+	},
 
 
 	render: function() {
@@ -23,13 +48,18 @@ module.exports = React.createClass({
 			videoUrl += '&autoplay=1';
 		}
 
+		var youTubeEmbed = '';
+		if(this.state.videoInit){
+			youTubeEmbed = ( <iframe src={videoUrl} frameborder="0" allowfullscreen></iframe> );
+		}
+
 		return (
 
 			<div className={classes}>
 				<a href="#" className="done btn">Done</a>
 				<div className="video-wrapper">
-					<div id="project-video-player" className='embed-container'>
-						<iframe src={videoUrl} frameborder="0" allowfullscreen></iframe>
+					<div id="project-video-player" className="embed-container">
+						{youTubeEmbed}
 					</div>
 				</div>
 			</div>

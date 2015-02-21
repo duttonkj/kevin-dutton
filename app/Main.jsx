@@ -17,12 +17,13 @@ var Route = Router.Route;
 var Link = Router.Link;
 var ActiveState = Router.ActiveState;
 
+// Toggle Protected vs. Full access
+var showProtected = false;
 
 // Pages
 var Intro = require('./Intro.jsx');
 var About = require('./About.jsx');
-var Work = require('./WorkProtected.jsx');
-//var Work = require('./Work.jsx');
+var Work = ( showProtected ) ? require('./WorkProtected.jsx') : require('./Work.jsx');
 var Contact = require('./Contact.jsx');
 var Project = require('./Project.jsx');
 
@@ -32,8 +33,6 @@ var Header = require('./_components/Header.jsx');
 // Reflux
 var Reflux = require('reflux');
 var Store = require('./_reflux/Store.js');
-
-
 
 
 var Main = React.createClass({
@@ -96,13 +95,15 @@ var Main = React.createClass({
 
 });
 
+var workClasses = 'work';
+workClasses += ( showProtected ) ? ' protected' : '';
 
 var Application = (
 	<Routes location="history">
 		<Route handler={Main}>
 			<Route name="intro" path="/" handler={Intro} addHandlerKey={true} classId="intro" />
 			<Route name="about" path="about" handler={About} addHandlerKey={true} classId="about" />
-			<Route name="work" path="work" handler={Work} addHandlerKey={true} classId="work protected" />
+			<Route name="work" path="work" handler={Work} addHandlerKey={true} classId={workClasses} />
 			<Route name="project" path="/work/:projectSlug" handler={Project} classId="project" addHandlerKey={true} />
 			<Route name="contact" path="contact" handler={Contact} addHandlerKey={true} classId="contact" />
 		</Route>
