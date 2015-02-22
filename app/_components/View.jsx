@@ -2,7 +2,7 @@
 
 var React = require("react");
 
-var View = React.createClass({
+module.exports = React.createClass({
 
 	render: function() {
 
@@ -21,8 +21,4 @@ var View = React.createClass({
 		</div>
 		);
 	}
-
-
 });
-
-module.exports = View;
