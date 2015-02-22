@@ -18,12 +18,9 @@ $viewPadding: 15px;
 		padding-top:50px;
 		width: 57%;
 
-
 		@include respond-min($lg) {
 			font-size: 70px;
 			padding-top:50px;
-
-
 		}
 
 	}
@@ -33,7 +30,7 @@ $viewPadding: 15px;
 	top:0;
 	left:0;
 
-	transform: scale3d(0.3,0.3,1);
+	//transform: scale3d(0.3,0.3,1);
 
 
 	@include respond-min($lg) {
