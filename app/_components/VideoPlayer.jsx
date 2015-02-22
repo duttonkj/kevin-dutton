@@ -20,7 +20,6 @@ module.exports = React.createClass({
 
 		var transitionEvent = this.whichTransitionEvent();
 		transitionEvent && this.getDOMNode().addEventListener(transitionEvent, function() {
-			console.log('Transition complete!  This is the callback, no library needed!');
 			_this.setState({
 				videoInit: true
 			});
@@ -36,9 +35,6 @@ module.exports = React.createClass({
 			'project-video-player': true,
 			'active': this.props.showPlayer
 		});
-
-
-		console.log('renderVideo: %s', this.props.videoId);
 
 		var videoUrl = "//www.youtube.com/embed/"+this.props.videoId+'?rel=0&showinfo=0&controls=0&autohide=0&enablejsapi=1';
 
