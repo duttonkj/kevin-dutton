@@ -7,12 +7,10 @@ module.exports = Reflux.createStore({
     listenables: Actions,
 
     onViewMounted: function(){
-        console.log('Store: send view action');
         this.trigger();
     },
 
     onCloseButtonShow: function(){
-        console.log('Store: send view action');
         this.trigger();
     },
 

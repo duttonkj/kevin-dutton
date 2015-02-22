@@ -38,16 +38,11 @@ var AnimationHelper = {
 	},
 	componentDidEnter: function() {
 
-		console.log('view did enter');
-
-
 		Actions.viewMounted();
-		console.log('view Mounted triggered');
 
 	},
 	componentWillLeave: function( done ) {
 
-		console.log('view will leave');
 		var _this = this;
 
 		requestAnimationFrame(function() {
@@ -74,7 +69,6 @@ var AnimationHelper = {
 
 	},
 	componentDidLeave: function() {
-		console.log('view did leave');
 
 		// this.setState({
 		// 	willLeave: false

@@ -14,7 +14,6 @@ module.exports = React.createClass({
 	},
 
 	componentDidMount: function() {
-		console.log('Video Player mounted');
 
 		var _this = this;
 
