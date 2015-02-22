@@ -18,7 +18,7 @@ var Link = Router.Link;
 var ActiveState = Router.ActiveState;
 
 // Toggle Protected vs. Full access
-var showProtected = false;
+var showProtected = true;
 
 // Pages
 var Intro = require('./Intro.jsx');
