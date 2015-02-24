@@ -5,17 +5,16 @@ var React = require("react/addons");
 var Router = require('react-router');
 var Link = Router.Link;
 
+
 var Reflux = require('reflux');
 var Store = require('../_reflux/Store.js');
 
 var Header = React.createClass({
 
-	mixins: [Reflux.listenTo(Store,"onViewMounted")],
+	mixins: [ Reflux.listenTo(Store,"onViewMounted") ],
 
 	onViewMounted: function(status) {
 		console.log('Header:viewMounted recieved');
-	//	this.toggleMenuState()
-
     },
 
 	getInitialState: function() {
@@ -90,7 +89,19 @@ var Header = React.createClass({
 
 	},
 
+	componentDidMount: function(){
+		// Check for active route
+		if( this.props.isRouteActive ){
+			this.setState({
+				collapse: true,
+				showMenu: false,
+				menuLeave: true
+			});
+		}
+	},
+
 	render: function() {
+
 
 		var cx = React.addons.classSet;
 		var classes = cx({
